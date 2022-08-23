@@ -66,3 +66,19 @@ class Square extends React.Component {
   }
 ```
 
+# การทำ interactive กับ object
+โดยการ set onClick properties
+```javascript
+onClick={() => console.log('click')}
+```
+** Note เปลี่ยนจาก XML like เป็น JSX
+```javascript
+React.createElement('button', {
+        className: "square",
+        onClick: () => {console.log("Click")}
+        }, [this.props.value])
+```
+
+# การเก็บ state
+มีการเก็บ state โดยใช้ 'this.state' และเปลี่ยน state โดยใช้ 'this.setState()'
+การเรียกใช้ setstate จะทำการ re-render child component.
