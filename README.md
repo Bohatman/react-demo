@@ -1,8 +1,7 @@
 # Setup
 1. Install node.js
 2. Create new project with
-```
-command
+```command
 npx create-react-app my-app
 ```
 3. Delete all file in src/
@@ -10,8 +9,7 @@ npx create-react-app my-app
 # Overview
 Component มีหลายแบบ
 1. React.Component
-```
-javascript
+```javascript
 class ShoppingList extends React.Component {
   render() {
     return (
@@ -32,8 +30,7 @@ class ShoppingList extends React.Component {
 ถ้าข้อมูลเปลี่ยนมัน render view ให้ใหม่
 
 หรือสามารถเขียนเป็บแบบ JSX ก็ได้
-```
-javascript
+```javascript
 return React.createElement('div', {className: 'shopping-list'},
   React.createElement('h1', /* ... h1 children ... */),
   React.createElement('ul', /* ... ul children ... */)
@@ -46,4 +43,26 @@ return React.createElement('div', {className: 'shopping-list'},
 1. Square -> ปุ่มโง่ๆ 
 2. Board
 3. Game
+
+# วิธีการ passing value และการสร้าง object
+เรามี class คือ Board และมี function ในการสร้าง Square โดยเราสามารถเรียกตัวแปรที่ Board ส่งเข้ามาเพื่อสร้าง Square ได้ด้วยการใช้ this.props 
+
+ยกตัวอย่างเล่น 
+```javascript
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square">
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+และ Board สร้าง Square ด้วยการ
+```javascript
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
+```
 
