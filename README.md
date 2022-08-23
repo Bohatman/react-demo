@@ -39,3 +39,11 @@ return React.createElement('div', {className: 'shopping-list'},
   React.createElement('ul', /* ... ul children ... */)
 );
 ```
+
+
+# Starter Code
+เราจะทำ xo game โดยจะมี 3 object
+1. Square -> ปุ่มโง่ๆ 
+2. Board
+3. Game
+
